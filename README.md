@@ -1,2 +1,2 @@
-# Bonafide Requisition System
-A web application that enables students to send requisition mails to faculty members who can then very and approve a letter of recommendation
+# bonafide-requisition-system
+A system to make requisition for Letter of Recommendation
