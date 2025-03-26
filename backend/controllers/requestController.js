@@ -5,6 +5,11 @@ require('dotenv').config();
 exports.createRequest = async (req, res) => {
     try {
         const requestData = req.body;
+        const existingRequest=await Request.findOne({reg_no: requestData.reg_no})
+        if(existingRequest){
+            res.json({message: "User already present. Failed to add"})
+            return
+        }
         const newRequest = new Request(requestData);
         await newRequest.save();
 
