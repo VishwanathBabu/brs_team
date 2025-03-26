@@ -12,4 +12,4 @@ const requestSchema = new mongoose.Schema({
     status: {type: String, enum: ['Pending', 'Approved', 'Rejected'], default: 'Pending'}
 });
 
-module.exports = mongoose.model('Request', requestSchema);
+module.exports = mongoose.model('requests', requestSchema);
