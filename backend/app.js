@@ -1,19 +1,21 @@
-const express=require("express")
-const {connectDB}=require("./config/db")
-const dotenv=require("dotenv")
+const express = require('express');
+const cors = require('cors');
+const dotenv = require('dotenv');
+const connectDB = require('./config/db');
 
+dotenv.config();
 
-dotenv.config()
+const app = express();
+connectDB();
 
-const app=express()
+app.use(express.json());
+app.use(cors());
 
-const PORT=process.env.PORT
+const PORT = process.env.PORT || 5000;
 
-app.get("/", (req, res)=>{
-    console.log("Home page accessed")
-    res.send("Hello")
-})
+const requestRoutes = require('./Routes/requestRoutes');
+app.use('/api/requests', requestRoutes);
 
-app.listen(PORT, ()=>{
-    console.log("Server running at port 5000...")
-})
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});

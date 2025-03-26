@@ -1,16 +1,25 @@
-const mongoose=require("mongoose")
-const dotenv=require("dotenv")
+const mongoose = require('mongoose');
+require('dotenv').config();
 
-dotenv.config()
-
-const connectDB=async()=>{
-    try{
-        await mongoose.connect(process.env.MONODB_URL)
-        console.log("MongoDB connected successfully")
-    }catch(error){
-        console.error(error)
-        process.exit(1)
+const connectDB = async () => {
+  try {
+    const mongoURL = process.env.MONGODB_URL;
+    
+    if (!mongoURL) {
+      console.error('MongoDB URL is not defined');
+      process.exit(1);
     }
-}
 
-module.exports=connectDB
+    await mongoose.connect(mongoURL, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true
+    });
+
+    console.log('MongoDB Connected Successfully');
+  } catch (error) {
+    console.error('MongoDB Connection Error:', error.message);
+    process.exit(1);
+  }
+};
+
+module.exports = connectDB;
