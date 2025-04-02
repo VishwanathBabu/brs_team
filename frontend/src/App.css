@@ -1,3 +1,4 @@
+/* form */
 .container label {
   font-weight: bold;
   display: block;
@@ -38,4 +39,39 @@
   margin-top: 15px;
   border-radius: 4px;
   cursor: pointer;
+}
+
+/* home */
+.wrapper-home{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.container-home {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 300px;
+}
+.container-home > h2{
+  color: #333;
+  margin-bottom: 20px;
+}
+.a {
+  display: block;
+  width: calc(100% - 40px);
+  margin: 10px auto;
+  padding: 10px;
+  font-size: 16px;
+  text-decoration: none;
+  color: white;
+  background: #007bff;
+  border-radius: 4px;
+  text-align: center;
+}
+.a:hover {
+  background: #0056b3;
 }
