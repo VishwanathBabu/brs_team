@@ -12,7 +12,7 @@ A web application that enables students to send requisition mails to faculty mem
 Make sure that you have npm installed locally.<br/><br/>
 Clone the repository using the following command:<br/>
 ```PowerShell
-git clone https://github.com/PratyushKumarV/TrimDoc.git
+git clone https://github.com/VishwanathBabu/brs_team.git
 ```
 Once installed move into the backend folder and install the necessary dependencies<br />
 ```PowerShell
